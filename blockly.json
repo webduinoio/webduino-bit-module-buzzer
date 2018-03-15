@@ -1,5 +1,14 @@
 {
-  "types": ["button_new", "button_event"],
+  "types": [
+    "buzzer_new",
+    "buzzer_notes_tempos",
+    "buzzer_music_play",
+    "buzzer_var_notes_var_tempos",
+    "buzzer_event",
+    "buzzer_state",
+    "buzzer_music_array",
+    "buzzer_load_music"
+  ],
   "category": "catBoardGroup",
   "scripts": [
     "blockly/blocks.js",
