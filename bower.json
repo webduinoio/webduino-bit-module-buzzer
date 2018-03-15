@@ -7,7 +7,7 @@
   "keywords": [
     "arduino",
     "webduino",
-    "buzzer"
+    "buzzer",
     "webduino:bit"
   ],
   "ignore": [
