@@ -9,7 +9,7 @@
     "buzzer_music_array",
     "buzzer_load_music"
   ],
-  "category": "catBoardGroup",
+  "category": "toolbox",
   "scripts": [
     "blockly/blocks.js",
     "blockly/javascript.js"
