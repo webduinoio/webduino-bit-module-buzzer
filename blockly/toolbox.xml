@@ -1,4 +1,4 @@
-<category id="catBuzzer" index="5">
+<category id="catBuzzer" index="7">
   <block type="variables_set">
     <field name="VAR">buzzer</field>
     <value name="VALUE">
