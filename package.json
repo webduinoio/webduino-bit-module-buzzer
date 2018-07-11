@@ -1,6 +1,6 @@
 {
   "name": "webduino-module-bit-buzzer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Buzzer Module for Webduino Bit",
   "main": "BitBuzzer-blockly.js",
   "scripts": {
