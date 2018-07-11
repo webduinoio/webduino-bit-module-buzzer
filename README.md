@@ -3,7 +3,7 @@
 Module for Webduino:bit Buzzer.
 
 ## Installation
-####bower
+#### bower
 ```sh
 bower install https://github.com/webduinoio/webduino-bit-module-buzzer.git
 ```
