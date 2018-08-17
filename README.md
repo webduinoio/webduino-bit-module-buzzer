@@ -1,9 +1,11 @@
 # webduino-bit-module-buzzer
 
-Module for Webduino:bit Buzzer.
+Module for buzzer of Webduino:bit.
 
 ## Installation
+
 #### bower
+
 ```sh
 bower install https://github.com/webduinoio/webduino-bit-module-buzzer.git
 ```
