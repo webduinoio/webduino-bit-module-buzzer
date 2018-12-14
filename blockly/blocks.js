@@ -1,10 +1,10 @@
 var mainUrl = 'https://tutorials.webduino.io/zh-tw/docs/';
 var utmUrl = '?utm_source=cloud-blockly&utm_medium=contextMenu&utm_campaign=tutorials';
 
-Blockly.Blocks['buzzer_new'] = {
+Blockly.Blocks['buzzer_new_bit'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(Blockly.Msg.WEBDUINO_BUZZER)
+      .appendField(Blockly.Msg.WEBDUINO_BUZZER_BIT)
     this.setOutput(true);
     this.setTooltip('');
     this.setColour(230);

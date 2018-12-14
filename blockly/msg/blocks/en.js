@@ -1,4 +1,4 @@
-Blockly.Msg.WEBDUINO_BUZZER = "Buzzer";
+Blockly.Msg.WEBDUINO_BUZZER_BIT = "(Bit) Buzzer";
 Blockly.Msg.WEBDUINO_BUZZER_MUSIC1 = "Add Music, Name:";
 Blockly.Msg.WEBDUINO_BUZZER_MUSIC1_EDIT = "Notes and Tempos:";
 Blockly.Msg.WEBDUINO_BUZZER_MUSIC1_TONE = "Note:";

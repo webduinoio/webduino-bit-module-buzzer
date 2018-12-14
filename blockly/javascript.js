@@ -1,4 +1,4 @@
-Blockly.JavaScript['buzzer_new'] = function (block) {
+Blockly.JavaScript['buzzer_new_bit'] = function (block) {
   var code = 'getBuzzer(board, \'25\')';
 
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
@@ -44,21 +44,29 @@ function _buzzer_music(m) {
 
 Blockly.JavaScript['buzzer_music_play'] = function (block) {
   var variable_var_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var_'), Blockly.Variables.NAME_TYPE);
-  var statements_music_ = Blockly.JavaScript.statementToCode(block, 'music_');
+  var statements_music_ = Blockly.JavaScript.statementToCode(block, 'music_').trim();
   var code = '';
-
-  if (statements_music_.indexOf('"') > 0) {
+  if (/\'|\"/g.test(statements_music_)) {
     var functionName = Blockly.JavaScript.provideFunction_(
       'buzzer_music', ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ + '(m) {',
-        _buzzer_music.toString().replace(/function _buzzer_music\(m\) {\r?\n/, '')
+      _buzzer_music.toString().replace(/function _buzzer_music\(m\) {\r?\n/, '')
       ]);
     code = variable_var_ + '.play(' + functionName + '([' + statements_music_ + ']).notes ,' + functionName + '([' + statements_music_ + ']).tempos );\n';
   } else {
-    var _vars = statements_music_.trim();
-    _vars = _vars.substring(0,_vars.length-1).split(',');
-    var notes = _vars[0].split(':')[1];
-    var tempos = _vars[1].split(':')[1];
-    code = variable_var_ + '.play(' + notes +','+ tempos+');\n';
+    if (statements_music_.indexOf('},{') > -1) {
+      // Deal with multiple object
+      var functionName = Blockly.JavaScript.provideFunction_(
+        'buzzer_music', ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ + '(m) {',
+        _buzzer_music.toString().replace(/function _buzzer_music\(m\) {\r?\n/, '')
+        ]);
+      code = variable_var_ + '.play(' + functionName + '([' + statements_music_ + ']).notes ,' + functionName + '([' + statements_music_ + ']).tempos );\n';
+    } else {
+      // Deal with single object
+      statements_music_ = statements_music_.substring(0, statements_music_.length - 1).split(',');
+      var notes = statements_music_[0].split(':')[1];
+      var tempos = statements_music_[1].split(':')[1];
+      code = variable_var_ + '.play(' + notes + ', ' + tempos + ');\n';
+    }
   }
   return code;
 };
@@ -67,7 +75,7 @@ Blockly.JavaScript['buzzer_music_array'] = function (block) {
   var value_music_name_ = Blockly.JavaScript.valueToCode(block, 'music_name_', Blockly.JavaScript.ORDER_ATOMIC);
   var value_notes_ = Blockly.JavaScript.valueToCode(block, 'notes_', Blockly.JavaScript.ORDER_ATOMIC);
   var value_tempos_ = Blockly.JavaScript.valueToCode(block, 'tempos_', Blockly.JavaScript.ORDER_ATOMIC);
-  var next = block.getNextBlock();
+  var next = block.getNextBlock() && !block.getNextBlock().disabled;
   var notes = value_notes_.replace(/\'/g, '');
   var tempos = value_tempos_.replace(/\'/g, '');
   var notesGen = notes.split(',');

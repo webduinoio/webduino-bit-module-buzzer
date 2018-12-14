@@ -1,6 +1,6 @@
 {
   "types": [
-    "buzzer_new",
+    "buzzer_new_bit",
     "buzzer_notes_tempos",
     "buzzer_music_play",
     "buzzer_var_notes_var_tempos",
@@ -9,7 +9,7 @@
     "buzzer_music_array",
     "buzzer_load_music"
   ],
-  "category": "toolbox",
+  "category": "catMenu2",
   "scripts": [
     "blockly/blocks.js",
     "blockly/javascript.js"

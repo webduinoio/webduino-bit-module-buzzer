@@ -1,1 +1,1 @@
-MSG.catBuzzer = "蜂鳴器";
+MSG.catBuzzer_bit = "蜂鳴器";

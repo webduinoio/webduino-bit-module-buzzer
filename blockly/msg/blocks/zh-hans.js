@@ -1,4 +1,4 @@
-Blockly.Msg.WEBDUINO_BUZZER = "蜂鸣器";
+Blockly.Msg.WEBDUINO_BUZZER_BIT = "(Bit) 蜂鸣器";
 Blockly.Msg.WEBDUINO_BUZZER_MUSIC1 = "建立音乐，音乐名称";
 Blockly.Msg.WEBDUINO_BUZZER_MUSIC1_EDIT = "音符与节奏";
 Blockly.Msg.WEBDUINO_BUZZER_MUSIC1_TONE = "音符";

@@ -1,8 +1,8 @@
-<category id="catBuzzer" index="7">
+<category id="catBuzzer_bit" index="7" tags="bit">
   <block type="variables_set">
     <field name="VAR">buzzer</field>
     <value name="VALUE">
-      <block type="buzzer_new"></block>
+      <block type="buzzer_new_bit" tags="bit"></block>
     </value>
   </block>
   <block type="buzzer_music_play"></block>
